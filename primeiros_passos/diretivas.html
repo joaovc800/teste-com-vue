@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+   <!--  tudo que for data do vue precisa estar dentro do elemento principal -->
+    <div id="app">
+        <img v-bind:src="srcImg" v-bind:title="titleImg"> <!-- ao determinar o bind ou colocar apenas :(dois pontos) não precisa de chaves -->
+        <hr>
+        <div v-bind:href='url'>Vue</div> <!-- ao determinar o bind não precisa de chaves -->
+        <hr>
+        <p v-html="texto"></p> <!-- usar essa diretiva para interpretar html -->
+    </div>
+
+    <!--Colocar o script do vue antes de executar-->
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script>
+
+        new Vue({
+
+            el: '#app', //elemento principal do vue
+
+            // dados
+            data: { // armazenar dados
+                
+                srcImg: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOUdPZ5qmnZrzsYMOxV9oBfb-yKRD_EaUauw&usqp=CAU',
+                titleImg: 'Vue',
+                url: 'http://vuejs.org',
+                texto: 'Texto <b>paragrafo</b>'
+            },
+            
+            
+
+        })
+
+        
+    </script>
+</body>
+</html>
