@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+   <!--  tudo que for data do vue precisa estar dentro do elemento principal -->
+    <div id="app">
+        <h1>{{msg}}</h1> mostrar string
+        <p>{{everdade ? 'Verdade' : 'False'}}</p> <!-- mostrar boolean com if ternário -->
+        <p>{{frutas[0] + ' e ' + frutas[1]}}</p><!--  mostrar array -->
+        <p>{{aluno.nome}}</p> <!-- mostrar objeto -->
+        <p>{{1 + num1}}</p> <!-- mostrar numero e somando -->
+        <p>{{metodo(1)}}</p> <!-- chamando a função com parametro -->
+    </div>
+
+    <!--Colocar o script do vue antes de executar-->
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script>
+
+        new Vue({
+
+            el: '#app', //elemento principal do vue
+
+            // dados
+            data: { // armazenar dados
+                msg: 'Teste de mensagem', //string
+                everdade: true, //boolean
+                frutas: ['maça','uva','Pera'], // array
+                aluno: {nome: 'João'}, //objeto
+                num1: 1, // número
+            },
+            methods: {
+                metodo(indice){ // arrow function
+                    return 'Fruta: ' + this.frutas[indice]
+                }
+            },
+            
+
+        })
+
+        
+    </script>
+</body>
+</html>
